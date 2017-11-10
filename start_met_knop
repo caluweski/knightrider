@@ -1,0 +1,29 @@
+int knop = 11;
+
+void setup() {
+  // ledpins declareren als uitgang 
+  for(int i=1;i<=8;i++){
+    pinMode(i,OUTPUT);
+    digitalWrite(i,HIGH);
+  }
+  // schakelaarpin declareren als ingang
+  pinMode(knop, INPUT);
+  digitalWrite(knop,HIGH);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  if(digitalRead(knop)==HIGH){
+    for(int i=1;i<=8;i++){
+      digitalWrite(i,HIGH);
+      delay(100);
+    }
+  }
+  else
+  {
+      for(int i=1;i<=8;i++){
+      digitalWrite(i,LOW);
+      delay(100);
+    }
+  }
+}
